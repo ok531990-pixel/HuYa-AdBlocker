@@ -1,0 +1,39 @@
+# HuYa 去广告 - 远程规则订阅
+# 虎牙专属广告域 + 欢聚数据上报 + 开屏素材域 + 腾讯广点通/MediaV 广告 SDK 域
+# 来源: anti-AD (privacy-protection-tools) 规则库实证 + DNS 实锤 + fmz200/wool_scripts 情报
+# 用法: Loon -> 配置 -> 规则 -> 添加远程规则 -> 粘贴本文件 URL
+
+# ── 虎牙专属广告/统计域 ──
+DOMAIN-SUFFIX,ad.huya.com,REJECT
+DOMAIN-SUFFIX,ads.huya.com,REJECT
+DOMAIN-SUFFIX,df.huya.com,REJECT
+DOMAIN-SUFFIX,e-ad-monitor.huya.com,REJECT
+DOMAIN-SUFFIX,e-stat.huya.com,REJECT
+DOMAIN-SUFFIX,3dm.huya.com,REJECT
+DOMAIN-SUFFIX,l.web.huya.com,REJECT
+DOMAIN-SUFFIX,metric.huya.com,REJECT
+DOMAIN-SUFFIX,statwup.huya.com,REJECT
+DOMAIN-SUFFIX,udblog.huya.com,REJECT
+DOMAIN-SUFFIX,ylog.huya.com,REJECT
+
+# ── 欢聚时代(虎牙母公司)广告/数据上报 ──
+DOMAIN-SUFFIX,hiido.com,REJECT
+DOMAIN-SUFFIX,mlog.hiido.com,REJECT
+DOMAIN-SUFFIX,ylog.hiido.com,REJECT
+
+# ── 开屏广告素材域 ──
+DOMAIN,business.msstatic.com,REJECT
+DOMAIN,huyafile.msstatic.com,REJECT
+DOMAIN,pp-cdnfile2pcdn.msstatic.com,REJECT
+DOMAIN,livewebbs2pcdn.msstatic.com,REJECT
+
+# ── 腾讯广点通 GDT 广告 SDK（虎牙广告来源，全局去广告）──
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN-SUFFIX,gdtimg.com,REJECT
+DOMAIN-SUFFIX,ugdtimg.com,REJECT
+DOMAIN-SUFFIX,adsmind.gdtimg.com,REJECT
+DOMAIN-SUFFIX,adsmind.apdcdn.tc.qq.com,REJECT
+DOMAIN-SUFFIX,pgdt.gtimg.cn,REJECT
+
+# ── MediaV 广告 SDK ──
+DOMAIN-SUFFIX,mediav.com,REJECT
