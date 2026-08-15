@@ -28,6 +28,9 @@ DOMAIN,huyafile.msstatic.com,REJECT
 DOMAIN,pp-cdnfile2pcdn.msstatic.com,REJECT
 DOMAIN,livewebbs2pcdn.msstatic.com,REJECT
 DOMAIN,cdnfile1.msstatic.com,REJECT
+DOMAIN,cdnfile2.msstatic.com,REJECT
+DOMAIN,cdnfile3.msstatic.com,REJECT
+DOMAIN-SUFFIX,v1d.szbdyd.com,REJECT
 
 # ── 腾讯广点通 GDT 广告 SDK（虎牙广告来源，全局去广告）──
 DOMAIN-SUFFIX,gdt.qq.com,REJECT

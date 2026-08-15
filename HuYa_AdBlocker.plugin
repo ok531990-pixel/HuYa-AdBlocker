@@ -1,7 +1,7 @@
 #!name=HuYa 去广告
-#!desc=虎牙 APP 去广告 v3.2：域拦截（虎牙广告域+欢聚上报+广点通/MediaV SDK+开屏素材域）+ URL Rewrite（开屏/直播间入口广告接口）。SSL Pinning 域走 DNS 拒绝，可解密域走 Rewrite，双保险。
+#!desc=虎牙 APP 去广告 v3.3：域拦截（虎牙广告域+欢聚上报+广点通/MediaV SDK+开屏素材域+PCDN 节点域）+ URL Rewrite（开屏/直播间入口广告接口）。SSL Pinning 域走 DNS 拒绝，可解密域走 Rewrite，双保险。
 #!home=https://github.com/ok531990-pixel/HuYa-AdBlocker
-#!version=3.2.0
+#!version=3.3.0
 
 [Rule]
 # ═══ 虎牙专属广告/统计域（只影响虎牙，必开）═══
@@ -22,12 +22,15 @@ DOMAIN-SUFFIX,hiido.com,REJECT
 DOMAIN-SUFFIX,mlog.hiido.com,REJECT
 DOMAIN-SUFFIX,ylog.hiido.com,REJECT
 
-# ═══ 开屏广告素材域（msstatic 广告子域，全量 REJECT）═══
+# ═══ 开屏广告素材域（msstatic 广告子域 + PCDN 节点，全量 REJECT）═══
 DOMAIN,business.msstatic.com,REJECT
 DOMAIN,huyafile.msstatic.com,REJECT
 DOMAIN,pp-cdnfile2pcdn.msstatic.com,REJECT
 DOMAIN,livewebbs2pcdn.msstatic.com,REJECT
 DOMAIN,cdnfile1.msstatic.com,REJECT
+DOMAIN,cdnfile2.msstatic.com,REJECT
+DOMAIN,cdnfile3.msstatic.com,REJECT
+DOMAIN-SUFFIX,v1d.szbdyd.com,REJECT
 
 # ═══ 腾讯广点通 GDT 广告 SDK（虎牙 APP 广告来源，全局生效=全局去广告）═══
 DOMAIN-SUFFIX,gdt.qq.com,REJECT
@@ -43,6 +46,8 @@ DOMAIN-SUFFIX,mediav.com,REJECT
 [Rewrite]
 # 开屏/入口广告接口（可解密域，直接 reject）
 ^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns reject
+^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryAdConfig reject
+^https?:\/\/cdn\.wup\.huya\.com\/launch\/getSplashAd reject
 ^https?:\/\/business\.msstatic\.com\/advertiser\/material reject
 ^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ reject-img
 ^https?:\/\/live-ads\.huya\.com\/live\/getAllEntrance.* reject-dict
