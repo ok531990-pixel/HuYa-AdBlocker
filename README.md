@@ -1,6 +1,6 @@
-# HuYa 去广告 - Loon 插件（v3.1 域拦截 + URL Rewrite 双保险）
+# HuYa 去广告 - Loon 插件（v3.2 域拦截 + URL Rewrite 双保险）
 
-虎牙直播 APP（iOS）去广告。**v3.1 双保险**：SSL Pinning 域走 DNS 拒绝（Pinning 无法绕过），可解密域走 URL Rewrite 直接 reject 广告接口。
+虎牙直播 APP（iOS）去广告。**v3.2 双保险**：SSL Pinning 域走 DNS 拒绝（Pinning 无法绕过），可解密域走 URL Rewrite 直接 reject 广告接口。新增直播间入口广告拦截（live-ads.huya.com）。
 
 ## 安装（一键订阅）
 
@@ -17,15 +17,17 @@ https://raw.githubusercontent.com/ok531990-pixel/HuYa-AdBlocker/main/HuYa_AdBloc
 | 类别 | 域名/接口 | 方式 |
 |---|---|---|
 | 虎牙广告系统 | `ad.huya.com` / `ads.huya.com` / `df.huya.com` / `3dm.huya.com` | DNS REJECT |
+| 直播间广告 | `live-ads.huya.com` | DNS REJECT |
 | 广告监测 | `e-ad-monitor.huya.com` / `e-stat.huya.com` | DNS REJECT |
 | 数据上报/埋点 | `l.web.huya.com` / `metric.huya.com` / `statwup.huya.com` / `udblog.huya.com` / `ylog.huya.com` | DNS REJECT |
 | 欢聚(母公司) | `hiido.com` / `mlog.hiido.com` / `ylog.hiido.com` | DNS REJECT |
-| 开屏素材 | `business.msstatic.com` / `huyafile.msstatic.com` / `pp-cdnfile2pcdn.msstatic.com` / `livewebbs2pcdn.msstatic.com` | DNS REJECT |
+| 开屏素材 | `business.msstatic.com` / `huyafile.msstatic.com` / `pp-cdnfile2pcdn.msstatic.com` / `livewebbs2pcdn.msstatic.com` / `cdnfile1.msstatic.com` | DNS REJECT |
 | 广点通 SDK | `gdt.qq.com` 全家 + `gdtimg.com` / `ugdtimg.com` / `adsmind.*` / `pgdt.gtimg.cn` | DNS REJECT |
 | MediaV SDK | `mediav.com` | DNS REJECT |
 | 开屏接口 | `cdn.wup.huya.com/launch/queryHttpDns` | Rewrite reject |
 | 广告素材接口 | `business.msstatic.com/advertiser/material` | Rewrite reject |
 | 开屏图片 | `cdnfile1.msstatic.com/cdnfile/appad/` | Rewrite reject-img |
+| 直播间入口 | `live-ads.huya.com/live/getAllEntrance` | Rewrite reject-dict |
 
 > 广点通/MediaV 是所有使用腾讯广告 SDK 的 APP 共享的广告域，拦截后**全局去广告**。这些域只服务于广告，不影响 APP 正常功能。
 

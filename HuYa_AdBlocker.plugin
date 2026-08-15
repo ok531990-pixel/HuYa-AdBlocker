@@ -1,13 +1,14 @@
 #!name=HuYa 去广告
-#!desc=虎牙 APP 去广告 v3.1：域拦截（虎牙广告域+欢聚上报+广点通/MediaV SDK+开屏素材域）+ URL Rewrite（wup HTTPDNS 广告/开屏素材）。SSL Pinning 域走 DNS 拒绝，可解密域走 Rewrite，双保险。
+#!desc=虎牙 APP 去广告 v3.2：域拦截（虎牙广告域+欢聚上报+广点通/MediaV SDK+开屏素材域）+ URL Rewrite（开屏/直播间入口广告接口）。SSL Pinning 域走 DNS 拒绝，可解密域走 Rewrite，双保险。
 #!home=https://github.com/ok531990-pixel/HuYa-AdBlocker
-#!version=3.1.0
+#!version=3.2.0
 
 [Rule]
 # ═══ 虎牙专属广告/统计域（只影响虎牙，必开）═══
 DOMAIN-SUFFIX,ad.huya.com,REJECT
 DOMAIN-SUFFIX,ads.huya.com,REJECT
 DOMAIN-SUFFIX,df.huya.com,REJECT
+DOMAIN-SUFFIX,live-ads.huya.com,REJECT
 DOMAIN-SUFFIX,e-ad-monitor.huya.com,REJECT
 DOMAIN-SUFFIX,e-stat.huya.com,REJECT
 DOMAIN-SUFFIX,3dm.huya.com,REJECT
@@ -26,6 +27,7 @@ DOMAIN,business.msstatic.com,REJECT
 DOMAIN,huyafile.msstatic.com,REJECT
 DOMAIN,pp-cdnfile2pcdn.msstatic.com,REJECT
 DOMAIN,livewebbs2pcdn.msstatic.com,REJECT
+DOMAIN,cdnfile1.msstatic.com,REJECT
 
 # ═══ 腾讯广点通 GDT 广告 SDK（虎牙 APP 广告来源，全局生效=全局去广告）═══
 DOMAIN-SUFFIX,gdt.qq.com,REJECT
@@ -43,6 +45,7 @@ DOMAIN-SUFFIX,mediav.com,REJECT
 ^https?:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns reject
 ^https?:\/\/business\.msstatic\.com\/advertiser\/material reject
 ^https?:\/\/cdnfile1\.msstatic\.com\/cdnfile\/appad\/ reject-img
+^https?:\/\/live-ads\.huya\.com\/live\/getAllEntrance.* reject-dict
 
 [MITM]
-hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com
+hostname = cdn.wup.huya.com, business.msstatic.com, cdnfile1.msstatic.com, live-ads.huya.com

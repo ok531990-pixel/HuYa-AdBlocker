@@ -7,6 +7,7 @@
 DOMAIN-SUFFIX,ad.huya.com,REJECT
 DOMAIN-SUFFIX,ads.huya.com,REJECT
 DOMAIN-SUFFIX,df.huya.com,REJECT
+DOMAIN-SUFFIX,live-ads.huya.com,REJECT
 DOMAIN-SUFFIX,e-ad-monitor.huya.com,REJECT
 DOMAIN-SUFFIX,e-stat.huya.com,REJECT
 DOMAIN-SUFFIX,3dm.huya.com,REJECT
@@ -26,6 +27,7 @@ DOMAIN,business.msstatic.com,REJECT
 DOMAIN,huyafile.msstatic.com,REJECT
 DOMAIN,pp-cdnfile2pcdn.msstatic.com,REJECT
 DOMAIN,livewebbs2pcdn.msstatic.com,REJECT
+DOMAIN,cdnfile1.msstatic.com,REJECT
 
 # ── 腾讯广点通 GDT 广告 SDK（虎牙广告来源，全局去广告）──
 DOMAIN-SUFFIX,gdt.qq.com,REJECT
